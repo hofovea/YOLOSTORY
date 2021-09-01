@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+{{> header}}
+    <div id="contentContainer">
+      <h4 class="welcomeText">Welcome to YOLOstory!</h4>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>

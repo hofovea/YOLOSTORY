@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+  {{> header}}
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class='jumbotron text-center'>
+            <form style="padding: 20px" class='bg-primary' name="form" action="/stories/new" method="POST" enctype="multipart/form-data">
+              <div class='form-group'>
+                <label for="InputName">Name</label>
+                <input id="InputName" class='form-control' type="text" placeholder="Enter story" name="name"
+                  required>
+              </div>
+              <div class='form-group'>
+                <label for="InputComment">Comment</label>
+                <textarea style="margin-left: 5%; max-width: 90%; max-height: 150px" rows="4" cols="50" maxlength="50" id="InputComment" class='form-control' placeholder="Enter comment"
+                  name="comment" required> </textarea>
+              </div>
+              <div class='form-control-file'>
+                <label for="InputImage">Select your avatar</label>
+                <input id="InputImage" type="file" name="image" accept="image/*" required>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-info">Add story!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+  {{> footer}}
+  <script>
+    function validateForm() {
+      let form = document.forms["form"];
+      for (let key of form) {
+        if (key.value == "") {
+          alert(`All inputs must be filled out`);
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

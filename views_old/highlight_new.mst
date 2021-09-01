@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+        <div class="center vis-text">
+        <h1>Highlight</h1>
+      </div>
+
+      <div class="center">
+      <form name= "form" action="/highlights/new" method="POST">
+        <div class="row">
+          <div class="col-25">
+            <label for="adesc">Short description:</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="adesc" name="name" placeholder="Highlight name..." required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="atracks">Select stories:</label>
+          </div>
+          <div class="col-75">
+            <select name="storiesAr" multiple>
+            {{#stories}}
+                <option value="{{_id}}">{{comment}}</option>
+            {{/stories}}
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-25">
+            <input type="submit" value="Submit">
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  {{> footer}}
+</body>
+</html>

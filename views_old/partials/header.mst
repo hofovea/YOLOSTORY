@@ -1,0 +1,56 @@
+  <div id="mainContainer">
+    <div id="header">
+      <img class="logo" src="/images/yolo.png" alt="yolo stories">
+      <h1 class="headertext">Share your happiness</h1>
+  </div>
+  <div id="menuContainer">
+      <ul>
+        {{#user}}
+           <li class="currentElement">
+            <a href="../profile">
+              <h3 class="textMenuElement">{{user.username}}</h3>
+              <form action="../auth/logout", method = "GET">
+                <input type="submit" value="Logout" />
+              </form>
+            </a>
+          </li>
+        {{/user}}
+        <li class="currentElement">
+          <a href="../">
+            <h3 class="textMenuElement">Home page</h3>
+          </a>
+        </li>
+        {{#user}}
+        {{#user.role}}
+          <li>
+            <a href="../users">
+              <h3 class="textMenuElement">Users</h3>
+            </a>
+          </li>
+        {{/user.role}}
+        <li>
+          <a href="../highlights">
+            <h3 class="textMenuElement">My Highlights</h3>
+          </a>
+        </li>
+        <li>
+          <a href="../stories">
+            <h3 class="textMenuElement">My Stories</h3>
+          </a>
+        </li> 
+        
+        {{/user}}
+        <li>
+          <a href="../about">
+            <h3 class="textMenuElement">About</h3>
+          </a>
+        </li>
+        {{^user}}
+        <li>
+          <a href="../auth/login">
+            <h3 class="textMenuElement">Login</h3>
+          </a>
+        </li>
+        {{/user}}
+      </ul>
+  </div>

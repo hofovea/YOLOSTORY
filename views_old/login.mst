@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+    {{> header}}
+    <div id="contentContainer">
+        <form name= "form" action="/auth/login" method="POST">
+            <fieldset>
+                <legend>Sign in:</legend>
+                Login: <input type="text" placeholder="Enter your login here" name="login" required><br>
+                Password: <input type="password" placeholder="Enter your password here" id="PasswordInput" name="password" minlength="8" required><br>
+            </fieldset>
+            <div>
+                <input type="submit" value="SIGN IN!">
+            </div>
+        </form>
+        <h2 class="separator">OR</h2>
+        <form action="/auth/register" method="GET"> 
+            <input class="sign-up" type="submit" value="SIGN UP!">
+        </form>
+    </div>
+    {{> footer}}
+    <script>
+        function showPassword() {
+            var x = document.getElementById("PasswordInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        function validateForm() {
+            let form = document.forms["form"];
+            for(let key of form) {
+                if(key.value == ""){
+                    alert(`All inputs must be filled out`);
+                    return false;
+                }
+            }
+            return true;
+        }
+        </script>
+</body>
+</html>

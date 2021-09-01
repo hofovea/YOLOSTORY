@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+        <table class="tabledisign">
+           <tr>
+               <th class="tabletop">Login</th>
+               <th class="tabletop">Fullname</th>
+               <th class="tabletop">Registered</th>
+           </tr>
+           {{#users}}
+                <tr>
+                    <td class="tableusers"><a href="../users/{{id}}">{{login}}</a></td>
+                    <td class="tableusers"><a href="../users/{{id}}">{{fullname}}</a></td>
+                    <td class="tableusers">
+                        <form action="../users/{{id}}" method="POST">
+                            <input type="submit" value="Delete!">
+                        </form>
+                    </td>
+                </tr>
+            {{/users}}
+            {{^users}}
+                <h3>Currently there is no users!</h3>
+            {{/users}}
+           <tr>
+        </table>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>

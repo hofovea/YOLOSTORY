@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+  {{> header}}
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class='jumbotron text-center'>
+            <form style="padding: 20px" class='bg-primary' name="form" action="/highlights/new" method="POST" enctype="multipart/form-data">
+              <div class='form-group'>
+                <label for="InputName">Name</label>
+                <input id="InputName" class='form-control' type="text" placeholder="Enter name" name="name" required>
+              </div>
+              <div class='form-group'>
+                <label for="InputComment">Stories in highlight:</label>
+                <div>
+                  <select name="storiesAr" multiple>
+                    {{#highlight.stories}}
+                    <option value="{{_id}}" class='text-warning'>{{name}}</option>
+                    {{/highlight.stories}}
+                  </select>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-info">Add highlight!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+  {{> footer}}
+</body>
+
+</html>

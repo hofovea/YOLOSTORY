@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> header}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form action="../profile/friends" method="GET">
+                        <div class="inputContent">
+                            <input type="text" id="tsearch" name="search" placeholder="Search friends...">
+                            <input class="action-button" type="submit" value="Search!">
+                        </div>
+                    </form>
+                    {{#users.length}}
+                    {{#search_str}}
+                    <div class="search-info">
+                        <h4>Search results for: {{search_str}}</h4>
+                    </div>
+                    {{/search_str}}
+                    <table class="tabledisign">
+                        <tr>
+                            <th class="tabletop">Login</th>
+                            <th class="tabletop">Fullname</th>
+                            {{#user.role}}
+                            <th class="tabletop">Action</th>
+                            {{/user.role}}
+                        </tr>
+                        {{#users}}
+                        <tr>
+                            <td><a href="../users/{{_id}}">{{login}}</a></td>
+                            <td><a href=".../users/{{_id}}">{{fullname}}</a></td>
+                            <td>
+                                <a href="../profile/friends/{{_id}}/unsubscribe" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Unsubscribe</a>
+                            </td>
+                        </tr>
+                        {{/users}}
+                    </table>
+                    <div class="page_refs">
+                        {{#prev_page}}
+                        <a class='prev' href="../profile/friends?page={{prev_page}}{{#search_str}}
+                                    &search={{search_str}}{{/search_str}}">Previous
+                            page</a>
+                        {{/prev_page}}
+                        {{#next_page}}
+                        <a class='next' href="../profile/friends?page={{next_page}}{{#search_str}}
+                                    &search={{search_str}}{{/search_str}}">Next
+                            page</a>
+                        {{/next_page}}
+                    </div>
+                    {{/users.length}}
+                    {{^users.length}}
+                    <div><h1 class="text-warning">You don`t have any friends.</h1></div>
+                    {{/users.length}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    {{> footer}}
+</body>
+
+</html>

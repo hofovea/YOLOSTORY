@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> header}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="panel panel-default bg-info">
+                        <div class="card">
+                            <div class="card-body" style="margin-right: 5px; margin-left: 5px; padding-bottom: 10px">
+                                <h2 class="card-title">ABOUT US</h2>
+                                <hr class="me-4">
+                                <h3 class="card-text">YOLOstory will help you to share special and unique moments of
+                                    your
+                                    life with
+                                    friend,<br>but
+                                    you can also save the best stories for later.<br> Everyone have interesing life, so
+                                    <b>share
+                                        your happiness!</b><br>
+                                    <b class='text-warning'>The creator of this website is me, Mykhail Zashchyk. Thanks
+                                        for using it!</b>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    {{> footer}}
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+        <ul class="storyItem">
+          {{#highlight.stories}}
+            <li><a href="/stories/{{_id}}"> {{comment}} <img src={{imgUrl}} alt="storyPreview" width="100" height="100"></a></li>
+          {{/highlight.stories}}
+        </ul>
+
+        {{^highlight.stories.length}}
+          Ooops...Highlight is empty[-__-]
+        {{/highlight.stories.length}}
+        <div>
+            <form>
+                <a class ="action-button" href="/highlights/{{highlight._id}}/update">Update</a>
+                <button class ="action-button right" formmethod="post">
+                Delete
+                </button>
+        </form>
+        </div>
+    </div>
+  {{> footer}}
+</body>
+</html>

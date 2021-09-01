@@ -1,0 +1,74 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<div id="wrapper">
+    <div class="overlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="../../">
+                    Yolostory
+                </a>
+            </li>
+            <li id="navbar--text">
+                <a href="../../"><span class="glyphicon glyphicon-home"></span>
+                    Home</a>
+            </li>
+            {{#user}}
+            <li id="navbar--text">
+                <a href="../../profile"><span class="glyphicon glyphicon-cog"></span>
+                    My profile
+                </a>
+            </li>
+            <li id="navbar--text">
+                <a href="../../users"><span class="glyphicon
+                        glyphicon-list-alt"></span> Users</a>
+            </li>
+            <li id="navbar--text" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span>
+                    My moments<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="dropdown-header">Some ads here</li>
+                    <li id="navbar--text"><a href="../../profile/friends"><span class="glyphicon glyphicon-user"></span>
+                            My
+                            friends</a></li>
+                    <li id="navbar--text"><a href="../../profile/friends/stories"><span class="glyphicon glyphicon-eye-open"></span>
+                            My
+                            friend`s stories</a></li>
+                    <li id="navbar--text"><a href="../../stories"><span class="glyphicon glyphicon-camera"></span> My
+                            stories</a></li>
+                    <li id="navbar--text"><a href="../../highlights"><span class="glyphicon glyphicon-star"></span> My
+                            highlights</a></li>
+                    <!--<li id="navbar--text"><a href="../../profile/archive"><span
+                                class="glyphicon glyphicon-bookmark"></span> My
+                            archive</a></li>-->
+                    {{#user.role}}
+                    <li id="navbar--text"><a href="../../stories/allstories"><span class="glyphicon glyphicon-globe"></span>
+                            All
+                            active stories</a></li>
+                    {{/user.role}}
+                </ul>
+            </li>
+            {{/user}}
+            {{^user}}
+            <li id="navbar--text">
+                <a href="../../../auth/login"><span class="glyphicon
+                        glyphicon-log-in"></span>
+                    Sign in</a>
+            </li>
+            {{/user}}
+            <li id="navbar--text">
+                <a href="../../../about"><span class="glyphicon
+                        glyphicon-info-sign"></span> About</a>
+            </li>
+            {{#user}}
+            <li id="navbar--text">
+                <a href="../../auth/logout"><span class="glyphicon
+                        glyphicon-log-out"></span>
+                    Logout</a>
+            </li>
+            {{/user}}
+        </ul>
+    </nav>
+    <!-- /#sidebar-wrapper -->

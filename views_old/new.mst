@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<script>
+function validateForm() {
+  let form = document.forms["form"];
+  for(let key of form){
+    if(key.value == ""){
+      alert(`All inputs must be filled out`);
+      return false;
+    }
+  }
+  return true;
+}
+</script>
+<body>
+  {{> header}}
+  <div id="contentContainer">
+    <form class = 'new-account-form' name= "form" action="/stories/new" method="POST" enctype="multipart/form-data">
+      <div class="inputContent">
+        <div class="col">
+            <label for="comment">Comment:</label>
+          </div>
+          <div class="col-2">
+            <textarea rows="5" cols="40" name="comment" placeholder="Enter comment.." required></textarea>
+          </div>
+          <div class="col">
+            <label for="showDuration">Show duration:</label>
+          </div>
+          <div class="col-2">
+            <input type="number" id="showDuration" name="showDuration" placeholder="Enter show duaration" min="1" max="48" required>
+          </div>
+          <div class="col">
+            <label for="views">Views:</label>
+          </div>
+          <div class="col-2">
+            <input type="number" id="views" name="views" placeholder="Enter views" min="0" required>
+          </div>
+          <div class="col">
+            <label for="timage">Select story image:</label>
+          </div>
+          <div class="col-2">
+            <input type="file" id="fimage" name="image" accept="image/*" required>
+          </div>
+          <input type="submit" value="Submit">
+      </div>    
+    </form>
+  </div>
+  {{> footer}}
+</body>
+</html>

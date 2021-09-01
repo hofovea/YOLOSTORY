@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+        <div class="center vis-text">
+        <h1>Highlights</h1>
+      </div>
+      {{#highlights.length}}
+      <div class="storyItem">
+        <ul>
+          {{#highlights}}
+            <li><a href="/highlights/{{id}}">{{name}}</a></li>
+          {{/highlights}}
+        </ul>
+      </div>
+      {{/highlights.length}}
+
+      {{^highlights.length}}
+      <div class = "center vis-text">No highlights were found.</div>
+      {{/highlights.length}}
+      <a class ="action-button right" href="/highlights/new">Add new highlight</a>
+    </div>
+  {{> footer}}
+</body>
+</html>

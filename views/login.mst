@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> header}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class='jumbotron text-center'>
+                        <form style="padding: 20px" class='bg-primary' name="form" action="/auth/login" method="POST">
+                            <div class='form-group'>
+                                <label for="InputLogin">Login</label>
+                                <input id="InputLogin" class='form-control' type="text" placeholder="Enter your login here"
+                                    name="login" required><br>
+                            </div>
+                            <div class='form-group'>
+                                <label for="InputPassword">Password</label>
+                                <input id="InputPassword" class='form-control' type="password" placeholder="Enter your password here"
+                                    id="PasswordInput" name="password" minlength="8" required><br>
+                                </fieldset>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-info">Sign in!</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <div>
+                            <form action="/auth/register" method="GET">
+                                <input style="width: 90%" class="btn btn-primary" type="submit" value="SIGN UP!">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    {{> footer}}
+    <script>
+        function showPassword() {
+            var x = document.getElementById("PasswordInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        function validateForm() {
+            let form = document.forms["form"];
+            for (let key of form) {
+                if (key.value == "") {
+                    alert(`All inputs must be filled out`);
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

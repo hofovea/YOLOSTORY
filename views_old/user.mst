@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+      <img class="userImage" src={{userToView.avaUrl}} alt="ava">
+      <div class="userinfo">
+        <h2>Fullname: {{userToView.fullname}}</h2>
+        <p>Login: {{userToView.login}}</p>
+        <p>Registration-date: {{userToView.registeredAt}}</p>
+      </div>
+      <b class="Bio">Bio:</b><p class="Bio"> {{userToView.bio}}</p>
+      <div>
+        {{#userToView.highlights}}
+        <b>Highlights:</b><a class=action-button href="/highlights/{{_id}}">{{name}}</a>
+        {{/userToView.highlights}}
+        {{^userToView.highlights}}
+        <b>Highlights:  </b>no highlights
+        {{/userToView.highlights}}
+        {{#user.role}}
+          {{^userToView.role}}
+            <form action="../users/{{userToView.id}}/promote" method="POST">
+              <input type="submit" value="Promote this user to Admin!">
+            </form>
+          {{/userToView.role}}
+          {{#userToView.role}}
+            <h3>{{userToView.fullname}} is already Admin!</h3>
+          {{/userToView.role}}
+        {{/user.role}}
+      </div>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>

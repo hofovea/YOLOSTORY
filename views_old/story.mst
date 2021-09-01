@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+        <img class="userImage" src={{story.imgUrl}} alt="picture">
+        <div class="userinfo">
+        <h2>Comment: {{story.comment}}</h2>
+        <p>Views: {{story.views}}</p>
+        <p>Story duration: {{story.showDuration}}</p>
+      <form>
+        <button class = action-button formmethod="post">
+          Delete
+        </button>
+    </form>
+    </div>
+    </div>
+  {{> footer}}
+</body>
+</html>

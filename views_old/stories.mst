@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+          <form action="/stories" method="GET">
+            <div class="inputContent">
+              <input type="text" id="tsearch" name="search" placeholder="Search story...">
+              <input class="action-button" type="submit" value="Search!">
+              </div>
+          </form>
+        <div class="addstory">
+          <a href="/stories/new"><h4>Add new story</h4></a>
+        </div>
+        {{#stories.length}}
+        {{#search_str}}
+              <div class="search-info">
+                  <h4>Search results for: {{search_str}}</h4>
+              </div>
+          {{/search_str}}
+        <ul>
+          {{#stories}}
+            <li class="storyItem">
+            <a href="stories/{{id}}">
+              <h4 class="storyMenuElement">Story{{id}}</h4>
+            </a>
+          </li>
+          {{/stories}}
+        </ul>
+        <div class="page_refs">
+              {{#prev_page}}
+                  <a class='prev' href="/stories?page={{prev_page}}{{#search_str}}
+                  &search={{search_str}}{{/search_str}}">Previous page</a>
+              {{/prev_page}}
+              {{#next_page}}
+                  <a class='next' href="/stories?page={{next_page}}{{#search_str}}
+                  &search={{search_str}}{{/search_str}}">Next page</a>
+              {{/next_page}}
+           </div>
+        {{/stories.length}}
+        {{^stories.length}}
+          <div class="search-info">No stories were found.</div>
+        {{/stories.length}}
+    </div>
+  {{> footer}}
+</body>
+</html>

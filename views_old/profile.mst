@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+<body>
+  {{> header}}
+    <div id="contentContainer">
+      <img class="userImage" src={{user.avaUrl}} alt="ava">
+      <div class="userinfo">
+        <h2>Fullname: {{user.fullname}}</h2>
+        <p>Username: {{user.username}}</p>
+        <p>Login: {{user.login}}</p>
+        <p>Registration-date: {{user.registeredAt}}</p>
+      </div>
+      <b class="Bio">Bio:</b><p class="Bio"> {{user.bio}}</p>
+      <div>
+        {{#user.highlights}}
+        <b>Highlights:</b><a class=action-button href="/highlights/{{_id}}">{{name}}</a>
+        {{/user.highlights}}
+        {{^user.highlights}}
+        <b>Highlights:   </b>no highlights
+        {{/user.highlights}}
+      </div>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>

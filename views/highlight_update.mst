@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+  {{> header}}
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="center vis-text">
+            <h1>Highlight</h1>
+          </div>
+
+          <div class="center">
+            <form name="form" action="/highlights/{{highlight._id}}/update" method="POST">
+              <div class="row">
+                <div class="col-25">
+                  <label for="adesc">Short description:</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="adesc" name="name" placeholder="Highlight name..." required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-25">
+                  <label>Select stories:</label>
+                </div>
+                <div class="col-75">
+                  <select name="storiesAr" id="atracks" multiple>
+                    {{#stories}}
+                    <option value="{{_id}}">{{comment}}</option>
+                    {{/stories}}
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-25">
+                  <input type="submit" value="Submit">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+  {{> footer}}
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> header}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class='card bg-info' style="width: 100%">
+                        <img class="card-img-top" src={{user.avaUrl}} alt="ava" style="width: 100%">
+                        <div class='card-body' style="margin-right: 5px; margin-left: 5px; padding-bottom: 10px">
+                            <h2 class='card-title'>Fullname: {{user.fullname}}</h2>
+                            <h3 class='card-title'>Login: {{user.login}}</h3>
+                            <h4 class='card-title'>Registration-date: {{user.registeredAt}}</h4>
+                            <b class='card-text'>Bio:</b>
+                            <p class='card-text'> {{user.bio}}</p>
+
+
+                            
+
+                            <div>
+                                <ul class='list-group'>
+                                    <a data-toggle="collapse" href="#collapseHighlights" aria-expanded="false"
+                                        aria-controls="collapseHighlights" class='list-group-item list-group-item-action active'><b>Highlights:</b></a>
+                                    {{#user.highlights.length}}
+
+                                    <div id="collapseHighlights" class="collapse">
+                                        {{#user.highlights}}
+                                        <a class="list-group-item list-group-item-action" href="/highlights/{{_id}}">{{name}}</a>
+                                        {{/user.highlights}}
+                                    </div>
+
+
+                                    {{/user.highlights.length}}
+                                    {{^user.highlights.length}}
+                                    {{^user.highlights}}
+                                    <div id="collapseHighlights" class="collapse">
+                                        <a class="list-group-item list-group-item-action" href="#" aria-disabled="true"><b>No
+                                                highlights</b></a>
+                                    </div>
+
+                                    {{/user.highlights}}
+                                    {{/user.highlights.length}}
+                                </ul>
+                                <ul class='list-group'>
+                                    <a data-toggle="collapse" href="#collapseStories" aria-expanded="false"
+                                        aria-controls="collapseStories" class='list-group-item list-group-item-action active'><b>Stories:</b></a>
+                                    {{#user.stories.length}}
+                                    <div id="collapseStories" class="collapse">
+                                        {{#user.stories}}
+                                        <a class="list-group-item list-group-item-action" href="/stories/{{_id}}">Story
+                                            {{name}}</a>
+                                        {{/user.stories}}
+                                    </div>
+
+
+                                    {{/user.stories.length}}
+                                    {{^user.stories.length}}
+                                    {{^user.stories}}
+                                    <div id="collapseStories" class="collapse">
+                                        <a class="list-group-item list-group-item-action" href="#" aria-disabled="true"><b>No
+                                                stories</b></a>
+                                    </div>
+
+                                    {{/user.stories}}
+                                    {{/user.stories.length}}
+                                </ul>
+                                <ul class='list-group'>
+                                    <a data-toggle="collapse" href="#collapseFriends" aria-expanded="false"
+                                        aria-controls="collapseFriends" class='list-group-item list-group-item-action active'><b>Friends:</b></a>
+                                    {{#user.friends.length}}
+
+                                    <div id="collapseFriends" class="collapse">
+                                        {{#user.friends}}
+                                        <a class="list-group-item list-group-item-action" href="/users/{{_id}}">{{fullname}}</a>
+                                        {{/user.friends}}
+                                    </div>
+
+
+
+                                    {{/user.friends.length}}
+                                    {{^user.friends.length}}
+
+                                    <div id="collapseFriends" class="collapse">
+                                        {{^user.friends}}
+                                        <a class="list-group-item list-group-item-action" href="#" aria-disabled="true"><b>No
+                                                friends</b></a>
+                                        {{/user.friends}}
+                                    </div>
+
+
+                                    {{/user.friends.length}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    {{> footer}}
+</body>
+
+</html>

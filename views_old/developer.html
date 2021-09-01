@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Developer tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <body>
+        <h1>USER:</h1> 
+        <table border="1">
+                <tr>
+                    <th>Action</th>
+                    <th>Method</th>
+                    <th>URL</th>
+                    <th>Body params</th>
+                    <th>Pagination, Search</th>
+                    <th>Short review</th>
+                </tr>
+                     <tr>
+                         <td>GET ALL</td>
+                         <td>GET</td>
+                         <td>api/v1/users</td>
+                         <td>Nothing</td>
+                         <td>api/v1/users?page=[number of page], no search</td>
+                         <td>Returns all existing users in database,<br>to use this you have to be authorized as admin</td>
+                     </tr>     
+                     <tr>
+                        <td>GET BY ID</td>
+                        <td>GET</td>
+                        <td>api/v1/users/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Returns user by id in database,<br>to use this you have to be authorized as admin</td>
+                    </tr>
+                    <tr>
+                        <td>CREATE</td>
+                        <td>POST</td>
+                        <td>api/v1/users/new</td>
+                        <td>login, username,<br>password, confirmPassword,<br>fullname, bio, image</td>
+                        <td>No pagination, no search</td>
+                        <td>Creates new user and adds it into database,<br>to use this you have to be authorized as admin</td>
+                    </tr>
+                    <tr>
+                        <td>UPDATE</td>
+                        <td>PATCH</td>
+                        <td>api/v1/users/:id/update</td>
+                        <td>login, username,<br>password, confirmPassword,<br>fullname, bio, image</td>
+                        <td>No pagination, no search</td>
+                        <td>Updates user by id and saves changes into database,<br>to use this you have to be authorized as admin</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>DELETE</td>
+                        <td>api/v1/users/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Deletes user by id from database,<br>to use this you have to be authorized as admin</td>
+                    </tr>         
+             </table>
+
+
+         <h1>HIGHLIGHT:</h1> 
+         <table border="1">
+                <tr>
+                    <th>Action</th>
+                    <th>Method</th>
+                    <th>URL</th>
+                    <th>Body params</th>
+                    <th>Pagination, Search</th>
+                    <th>Short review</th>
+                </tr>
+                     <tr>
+                         <td>GET ALL</td>
+                         <td>GET</td>
+                         <td>api/v1/highlights</td>
+                         <td>Nothing</td>
+                         <td>api/v1/users?page=[number of page], no search</td>
+                         <td>Returns all existing highlights in database,<br>to use this you have to be authorized</td>
+                     </tr>     
+                     <tr>
+                        <td>GET BY ID</td>
+                        <td>GET</td>
+                        <td>api/v1/highlights/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Returns highlight by id in database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>CREATE</td>
+                        <td>POST</td>
+                        <td>api/v1/highlights/new</td>
+                        <td>login, username,<br>password, confirmPassword,<br>fullname, bio, image</td>
+                        <td>No pagination, no search</td>
+                        <td>Creates new highlight and adds it into database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>UPDATE</td>
+                        <td>PATCH</td>
+                        <td>api/v1/highlights/:id/update</td>
+                        <td>name,<br>[stories, you have to know id`s of every story you want to add]</td>
+                        <td>No pagination, no search</td>
+                        <td>Updates highlight by id and saves changes into database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>DELETE</td>
+                        <td>api/v1/highlights/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Deletes highlight by id from database,<br>to use this you have to be authorized</td>
+                    </tr>         
+             </table>
+
+         <h1>STORY:</h1> 
+         <table border="1">
+                <tr>
+                    <th>Action</th>
+                    <th>Method</th>
+                    <th>URL</th>
+                    <th>Body params</th>
+                    <th>Pagination, Search</th>
+                    <th>Short review</th>
+                </tr>
+                     <tr>
+                         <td>GET ALL</td>
+                         <td>GET</td>
+                         <td>api/v1/stories</td>
+                         <td>Nothing</td>
+                         <td>api/v1/users?page=[number of page]&search=[search string]</td>
+                         <td>Returns all existing stories in database,<br>to use this you have to be authorized</td>
+                     </tr>     
+                     <tr>
+                        <td>GET BY ID</td>
+                        <td>GET</td>
+                        <td>api/v1/stories/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Returns story by id in database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>CREATE</td>
+                        <td>POST</td>
+                        <td>api/v1/stories/new</td>
+                        <td>comment, views,<br>showDuration, image</td>
+                        <td>No pagination, no search</td>
+                        <td>Creates new story and adds it into database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>UPDATE</td>
+                        <td>PATCH</td>
+                        <td>api/v1/stories/:id/update</td>
+                        <td>comment, views,<br>showDuration</td>
+                        <td>No pagination, no search</td>
+                        <td>Updates story by id and saves changes into database,<br>to use this you have to be authorized</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>DELETE</td>
+                        <td>api/v1/stories/:id</td>
+                        <td>Nothing</td>
+                        <td>No pagination, no search</td>
+                        <td>Deletes story by id from database,<br>to use this you have to be authorized</td>
+                    </tr>         
+             </table>
+    </body>
+</html>

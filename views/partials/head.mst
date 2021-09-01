@@ -1,0 +1,22 @@
+<head>
+  <meta charset="utf-8">
+  <title>YOLOSTORY</title>
+  <meta name="description" content="Temporary story service">
+  <meta name="author" content="Защик Михаїл">
+
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+
+	<!-- Custom stlylesheet -->
+  <link type="text/css" href="/stylesheets/style.css" rel="stylesheet" />
+
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>

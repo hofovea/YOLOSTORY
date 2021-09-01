@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> header}}
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="panel panel-default">
+                        <div class='jumbotron text-center bg-primary'>
+                            <div class='container'>
+                                <h2 class='display-4'>Search stories:</h2>
+                            </div>
+                            <div class='container'>
+                                <form action="../stories/allstories" method="GET">
+                                    <input type="text" class="search" name="search" placeholder="Search ...">
+                                    <input style="margin-top: 10px" class="btn-lg btn-info" type="submit" value="Search!">
+                                </form>
+                            </div>
+                            <div class='container search-info'>
+                                {{#search_str}}
+                                <h3>Search results for {{search_str}}:</h3>
+                                {{/search_str}}
+                                {{^stories.length}}
+                                <div class="search-info">
+                                    <h3 class='text-warning'>Nothing was found</h3>
+                                </div>
+                                {{/stories.length}}
+                            </div>
+                        </div>
+                        {{#stories.length}}
+                        <table class="table table-bordered table-hover">
+                            <thead class="bg-primary">
+                                <tr>
+                                    <th class="col">Name</th>
+                                    <th class="col">Comment</th>
+                                </tr>
+                            </thead>
+
+                            {{#stories}}
+                            <tr class="bg-info clickable-row" data-href="../stories/{{_id}}">
+                                <td class="text-primary">{{name}}
+                                </td>
+                                <td class="text-primary">{{comment}}</td>
+                            </tr>
+                            {{/stories}}
+                        </table>
+                        <div class="text-center">
+                            <ul class='pagination'>
+                                <li class="page-item">
+                                    {{#prev_page}}
+                                    <a class='page-link' href="/stories/allstories?page={{prev_page}}{{#search_str}}&search={{search_str}}{{/search_str}}">
+                                        {{prev_page}}
+                                    </a>
+                                    {{/prev_page}}
+                                </li>
+                                <li class='page-item active'>
+                                    <a href="/stories/allstories?page={{current_page}}{{#search_str}}&search={{search_str}}{{/search_str}}">{{current_page}}</a>
+                                </li>
+
+                                <li class='page-item'>
+                                    {{#next_page}}
+                                    <a class='page-link' href="/stories/allstories?page={{next_page}}{{#search_str}}&search={{search_str}}{{/search_str}}">
+                                        {{next_page}}</a>
+                                    {{/next_page}}
+                                </li>
+                            </ul>
+                        </div>
+                        {{/stories.length}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    {{> footer}}
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".clickable-row").click(function () {
+                document.location = $(this).data("href");
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: orange;
+}
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+#mainContainer {
+    /* background: black; */
+    width: 1200px;
+    padding: 0;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#contentContainer {
+    height: 100%;
+    float: left;
+    background: rgb(0, 217, 255);
+    width: 1000px;
+}
+#menuContainer {
+    height: 100%;
+    background: pink;
+    width: 200px;
+    float: left;
+}
+.textMenuElement {
+    font-size: 20pt;
+    padding-left: 15px;   
+    padding-top: 5px;
+}
+.currentElement {
+    background: rgb(0, 217, 255);
+}
+#header {
+    background: white;
+    height: 250px;
+}
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: lightseagreen;   
+    width: 100%;
+    /* height: 95px; */
+}
+li a {
+    text-decoration: none;
+
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
+li:hover {
+    background: rgb(32, 137, 178);
+    color: navy;
+}
+.logo {
+    float: left;
+    display: block;
+    width: 250px;
+    height: 250px;  
+}
+.headertext {
+    float: left;
+    font-size: 45pt;
+    font-family: cursive;
+    margin-top: 85px;
+    margin-left: 10px;
+    color: darkgoldenrod;
+}
+.aboutText {
+    font-size: 25pt;
+    margin-left: 10px;
+}
+.tableusers {
+    font-size: 20pt;
+    text-align: center;
+    border: 1px solid rgba(73, 194, 26, 0.918);
+}
+.tabledisign {
+    border: 5px solid rgb(151, 68, 0);
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.tabletop {
+    border: 3px solid rgba(73, 194, 26, 0.918);
+    font-size: 20pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.welcomeText {
+    font-size: 25pt;
+    margin-left: 30%;
+    margin-top: 35px;
+}
+.storyMenuElement {
+    height: 50px;
+    font-size: 25pt;
+    background: rgb(0, 217, 255);
+    width: 100px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.storyItem {
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 5px;   
+    width: 100%;
+    background: rgb(0, 217, 255);
+    padding-left: 20px;
+}
+li:hover .storyMenuElement {
+    background: rgb(32, 137, 178);
+    color: navy;   
+}
+.userImage {
+    display: block;
+    float: left;
+    width: 250px;
+    height: 180px;
+    margin: 15px;
+}
+.userinfo {
+    width: 700px;
+    height: 210px;
+    float: left;
+    font-size: 15pt;
+}
+.Bio {
+    margin-left: 15px;
+    font-size: 15pt;
+}
+.storyDetails {
+    display: block;
+    float: left;
+    width: 400px;
+    height: 377px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.comment {
+    float: left;
+    margin-left: 15px;
+    font-size: 25pt;
+}
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: rgb(163, 92, 45);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(196, 108, 50);
+}
+
+input[type=text] {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-left: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+input[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.inputContent {
+    width: 95%;
+    padding: 15px;
+}
+input[type=submit].action-button {
+    width: 95%;
+    padding: 15px;
+    background-color: rgb(163, 92, 45);
+    color: rgb(255, 223, 78);
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-left: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type=submit].action-button:hover {
+    background-color: rgb(196, 108, 50);
+    color: rgb(245, 212, 66);
+}
+.addstory {
+    padding-left: 35px;
+    font-size: 25px;
+}
+.search-info {
+    padding-left: 35px;
+    font-size: 25px;
+}
+.next {
+    font-size: 25px;
+    padding-left: 35px;
+}
+.prev {
+    font-size: 25px;
+    padding-left: 35px;
+}
+.separator {
+    text-align: center
+}
